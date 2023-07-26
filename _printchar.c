@@ -7,7 +7,7 @@
  */
 int write_char(char c)
 {
-	return(write(1, &C, 1));
+        return(write(1, &C, 1));
 }
 /**
  * print_char - Prints character
@@ -17,8 +17,8 @@ int write_char(char c)
  */
 int print_char(va_list list)
 {
-	write_char(va_arg(list, int));
-	return (1);
+        write_char(va_arg(list, int));
+        return (1);
 }
 /**
  *print_string - Prints string to stdout
@@ -28,15 +28,15 @@ int print_char(va_list list)
  */
 int print_string(va_list list)
 {
-	int x;
-	char *str;
+        int x;
+        char *str;
 
-	str = va_arg(list, char *);
-	if (str == NULL)
-		str = "(null)";
-	for (x = 0; str[x] != '\0'; x++)
-		write_char(str[x]);
-	return (x);
+        str = va_arg(list, char *);
+        if (str == NULL)
+                str = "(null)";
+        for (x = 0; str[x] != '\0'; x++)
+		       write_char(str[x]);
+        return (x);
 }
 /**
  * print_cent - Prints a percent symbol
@@ -45,6 +45,6 @@ int print_string(va_list list)
  */
 int print_cent(__attribute__((unused))va_list list)
 {
-	write_char('%');
-	return (1);
+        write_char('%');
+        return (1);
 }
