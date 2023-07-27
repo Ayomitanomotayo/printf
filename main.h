@@ -14,7 +14,7 @@
 #define F_ADD 2
 #define F_NOT 4
 #define HASH_VAL 8
-#define F_BLACK 16
+#define F_BLANK 16
 
 /**
  * struct fmt - Struct op
