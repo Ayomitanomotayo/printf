@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _printbuf - Print existing buffer
+ * _printbuff - Print existing buffer
  * @buffer: Array of chars
  * @buffer_index: buffer Index to add char stored in buffer
  */
@@ -31,25 +31,27 @@ int _printf(const char *format, ...)
 	{
 		buffer[buffer_index++] = format[x];
 		if (buffer_index == BUFFER_SIZE)
-			_printbuffer(buffer, &buffer_index);
+		{
+			_printbuff(buffer, &buffer_index);
+		}
 			print_char++;
 	}
 		else
 	{
-			_printbuffer(buffer, &buffer_index);
+			_printbuff(buffer, &buffer_index);
 			flags = _checkflags(format, &x);
 			width = _checkwidth(format, &x, args);
 			precision = _checkprecision(format, &x, args);
 			size = _checksize(format, &x);
 			++x;
-			printed = handle_print(format, &x, args, buffer,
-				size, width, precision, flag);
+			print = _checkspecifier(format, &x, args, buffer,
+				size, width, precision, flags);
 			if (print == -1)
 				return (-1);
 		print_char += print;
 	}
 	}
-	_printbuffer(buffer, &buffer_index);
+	_printbuff(buffer, &buffer_index);
 	va_end(args);
 	return (print_char);
 }

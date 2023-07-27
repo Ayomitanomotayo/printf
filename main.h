@@ -70,7 +70,7 @@ int _checkflags(const char *format, int *x);
 int _checkprecision(const char *format, int *x, va_list args);
 int _checksize(const char *format, int *x);
 int _checkwidth(const char *format, int *i, va_list args);
-int _writenums(int is_neg, int index, char buffer[], int size,
+int _writenumber(int is_neg, int index, char buffer[], int size,
 	int width, int precision, int flags);
 int _writechar(char ch, char buffer[],
 	int size, int width, int precision, int flags);

@@ -7,7 +7,7 @@
  *
  * Return: the width.
  */
-int _checkwidth(const char *format, int *i, va_list args)
+int _checkwidth(const char *format, int *x, va_list args)
 {
 	int current_x;
 	int width = 0;

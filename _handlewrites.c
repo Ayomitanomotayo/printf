@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _writenums - writes string
+ * _writenumber - writes string
  * @is_neg: Listing arguments to take
  * @index: character data types indexing.
  * @buffer: array of buffer for handling printf fun
@@ -11,23 +11,23 @@
  *
  * Return: printed chars type.
  */
-int _writenums(int is_neg, int index, char buffer[], int size,
+int _writenumber(int is_neg, int index, char buffer[], int size,
 	int width, int precision, int flags)
 {
 	int len = BUFFER_SIZE - index - 1;
-	char padd = ' ', extra_char = 0;
+	char padd = ' ', extra_ch = 0;
 
 	UNUSED(size);
 	if ((flags & F_NOT) && !(flags & F_SUB))
 		padd = '0';
 	if (is_neg)
-		extra_char = '-';
+		extra_ch = '-';
 	else if (flags & F_ADD)
-		extra_char = '+';
+		extra_ch = '+';
 	else if (flags & F_BLANK)
-		extra_char = ' ';
-	return (write_num(ind, buffer, flags, width, precision,
-		length, padd, extra_char));
+		extra_ch = ' ';
+	return (_writenum(index, buffer, flags, width, precision,
+		len, padd, extra_ch));
 }
 /**
  * _writechar - write a string to stdout
@@ -50,7 +50,7 @@ int _writechar(char ch, char buffer[],
 	UNUSED(size);
 	if (flags & F_NOT)
 		padd = '0';
-	buffer[x++] = c;
+	buffer[x++] = ch;
 	buffer[x] = '\0';
 	if (width > 1)
 	{
@@ -61,7 +61,7 @@ int _writechar(char ch, char buffer[],
 			return (write(1, &buffer[0], 1) +
 					write(1, &buffer[BUFFER_SIZE - x - 1], width - 1));
 		else
-			return (write(1, &buffer[BUFFEF_SIZE - x - 1], width - 1) +
+			return (write(1, &buffer[BUFFER_SIZE - x - 1], width - 1) +
 					write(1, &buffer[0], 1));
 	}
 	return (write(1, &buffer[0], 1));
@@ -115,7 +115,7 @@ int _writenum(int index, char buffer[],
 		else if (!(flags & F_SUB) && padd == '0')
 		{
 			if (extra_ch)
-				buffer[--padd_start] = extra_ch;
+				buffer[--start_padd] = extra_ch;
 			return (write(1, &buffer[start_padd], x - start_padd) +
 				write(1, &buffer[index], len - (1 - start_padd)));
 		}

@@ -14,7 +14,7 @@
 int _writeunsgnd(int is_neg, int index,
 	char buffer[],int size, int width, int precision, int flags)
 {
-	int len = BUFFEF_SIZE - index - 1, x = 0;
+	int len = BUFFER_SIZE - index - 1, x = 0;
 	char padd = ' ';
 
 	UNUSED(is_neg);

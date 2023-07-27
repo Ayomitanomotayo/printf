@@ -18,7 +18,7 @@ int _checkspecifier(const char *f, int *index, va_list args, char buffer[],
 	fmt_t fmt_types[] = {
 		{'c', _printchar}, {'s', _printstring}, {'%', _printpercent},
 		{'i', _printint}, {'d', _printint}, {'b', _printbinary},
-		{'u', _printunsigned}, {'o', _printoctali}, {'x', _printhex},
+		{'u', _printunsigned}, {'o', _printoctal}, {'x', _printhex},
 		{'X', _printhexupper}, {'p', _printpointer}, {'S', _printnonprintable},
 		{'r', _printrev}, {'R', _printrot13}, {'\0', NULL}
 	};
