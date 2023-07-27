@@ -11,9 +11,9 @@ int _checkflags(const char *format, int *x)
 	int y, current_x;
 	int flags = 0;
 	const char FLAGS_CH[] = {'-', '+', '0', '#', ' ', '\0'};
-	const int FLAGS_ARR[] = {F_MINUS, F_PLUS, F_ZERO, F_HASH, F_SPACE, 0};
+	const int FLAGS_ARR[] = {F_SUB, F_ADD, F_NOT, HASH_VAL, F_BLANK, 0};
 
-	for (current_x = *x + 1; format[current_x] != '\0'; curr_x++)
+	for (current_x = *x + 1; format[current_x] != '\0'; current_x++)
 	{
 		for (y = 0; FLAGS_CH[y] != '\0'; y++)
 			if (format[current_x] == FLAGS_CH[y])
