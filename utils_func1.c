@@ -6,7 +6,7 @@
  */
 int is_digit(char a)
 {
-	if (c >= '0' && c <= '9')
+	if (a >= '0' && a <= '9')
 		return (1);
 
 	return (0);

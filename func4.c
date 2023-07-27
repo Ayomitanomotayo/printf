@@ -67,7 +67,7 @@ int print_hex(va_list diff, char rd_to[], char buffer[],
 		num1 /= 16;
 	}
 
-	if (flags & HASH_val && num2 != 0)
+	if (flags & HASH_VAL && num2 != 0)
 	{
 		buffer[x--] = flag_c;
 		buffer[x--] = '0';

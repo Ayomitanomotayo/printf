@@ -23,7 +23,7 @@ int append_hexa_code(char ascii_val, char buffer[], int x)
 {
 	char rd_to[] = "0123456789ABCDEF";
 
-	if (ascii_code < 0)
+	if (ascii_val < 0)
 		ascii_val = ascii_val * -1;
 
 	buffer[x++] = '\\';

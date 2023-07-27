@@ -18,7 +18,7 @@ int _printunsigned(va_list diff, char buffer[],
 	num1 = convert_size_unsgnd(num1, size);
 
 	if (num1 == 0)
-		buffer[X--] = '0';
+		buffer[x--] = '0';
 
 	buffer[BUFFER_SIZE - 1] = '\0';
 
@@ -28,7 +28,7 @@ int _printunsigned(va_list diff, char buffer[],
 		num1 /= 10;
 	}
 	x++;
-	return (write_unsgnd(0, x, buffer, flags, width, precision, size));
+	return (_writeunsgnd(0, x, buffer, flags, width, precision, size));
 }
 
 /**
@@ -53,7 +53,7 @@ int _printoctal(va_list diff, char buffer[],
 	num1 = convert_size_unsgnd(num1, size);
 
 	if (num1 == 0)
-		buffer[i--] = '0';
+		buffer[x--] = '0';
 
 	buffer[BUFFER_SIZE - 1] = '\0';
 
@@ -67,5 +67,5 @@ int _printoctal(va_list diff, char buffer[],
 		buffer[x--] = '0';
 
 	x++;
-	return (write_unsgnd(0, x, buffer, flags, width, precision, size));
+	return (_writeunsgnd(0, x, buffer, flags, width, precision, size));
 }

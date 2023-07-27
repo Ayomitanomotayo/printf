@@ -17,7 +17,7 @@ int _printpercent(va_list diff, char buffer[],
 	UNUSED(width);
 	UNUSED(buffer);
 	UNUSED(size);
-	UNUSED(types);
+	UNUSED(diff);
 	return (write(1, "%%", 1));
 }
 
@@ -39,7 +39,7 @@ int _printint(va_list diff, char buffer[],
 	long int v = va_arg(diff, long int);
 	unsigned long int num1;
 
-	v = convert_size_number(n, size);
+	v = convert_size_number(v, size);
 
 	if (v == 0)
 		buffer[x--] = '0';
@@ -60,7 +60,7 @@ int _printint(va_list diff, char buffer[],
 	}
 	x++;
 
-	return (write_number(neg, x, buffer, flags, width, precision, size));
+	return (_writenumber(neg, x, buffer, flags, width, precision, size));
 }
 
 /**
@@ -73,7 +73,7 @@ int _printint(va_list diff, char buffer[],
  * @diff: arg list
  * Return: count
  */
-int _printbinary(va_list types, char buffer[],
+int _printbinary(va_list diff, char buffer[],
 		int flags, int width, int precision, int size)
 {
 	size_t x, v, w, total;
@@ -87,8 +87,8 @@ int _printbinary(va_list types, char buffer[],
 	UNUSED(size);
 	UNUSED(buffer);
 
-	v = va_arg(types, unsigned int);
-	w = = 2147483648;
+	v = va_arg(diff, unsigned int);
+	w = 2147483648;
 	b[0] = v / w;
 
 	for (x = 1; x < 32; x++)
@@ -102,7 +102,7 @@ int _printbinary(va_list types, char buffer[],
 		if (total || x == 31)
 		{
 			q = '0' + b[x];
-			write(1, &z, 1);
+			write(1, &q, 1);
 			add++;
 		}
 	}

@@ -46,7 +46,7 @@ int _printpercent(va_list diff, char buffer[],
 		int flags, int width, int precision, int size);
 int _printint(va_list diff, char buffer[],
 		int flags, int width, int precision, int size);
-int _printbinary(va_list types, char buffer[],
+int _printbinary(va_list diff, char buffer[],
 		int flags, int width, int precision, int size);
 int _printunsigned(va_list diff, char buffer[],
 		int flags, int width, int precision, int size);

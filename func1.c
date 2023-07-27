@@ -14,7 +14,7 @@ int _printchar(va_list diff, char buffer[],
 {
 	char ch = va_arg(diff, int);
 
-	return (handle_write_char(ch, buffer, flags, width, precision, size));
+	return (_writechar(ch, buffer, flags, width, precision, size));
 }
 
 /**
@@ -49,7 +49,7 @@ int _printstring(va_list diff, char buffer[],
 	len++;
 	if (precision >= 0 && precision < len)
 		len = precision;
-	if (width > length)
+	if (width > len)
 	{
 		if (flags & F_SUB)
 		{

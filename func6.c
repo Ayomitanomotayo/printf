@@ -72,11 +72,12 @@ int _printrot13(va_list diff, char buffer[],
 
 	if (s == NULL)
 		s = "(AHYY)";
+
 	for (x = 0; s[x]; x++)
 	{
 		for (y = 0; in[y]; y++)
 		{
-			if (in[y] == str[x])
+			if (in[y] == s[x])
 			{
 				a = out[y];
 				write(1, &a, 1);

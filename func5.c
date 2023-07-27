@@ -29,7 +29,7 @@ int _printpointer(va_list diff, char buffer[],
 
 	num_add = (unsigned long)ptr;
 
-	while (num_ptr > 0)
+	while (num_add > 0)
 	{
 		buffer[index--] = rd_to[num_add % 16];
 		num_add /= 16;
@@ -44,7 +44,7 @@ int _printpointer(va_list diff, char buffer[],
 		extra_ch = ' ', len++;
 
 	index++;
-	return (_writeponter(buffer, index, len,
+	return (_writepointer(buffer, index, len,
 				width, flags, padd, extra_ch, start_padd));
 }
 
@@ -75,7 +75,7 @@ int _printnonprintable(va_list diff, char buffer[],
 	while (s[x] != '\0')
 	{
 		if (is_printable(s[x]))
-			buffer[i + offset] = str[i];
+			buffer[x + mem_offset] = s[x];
 		else
 			mem_offset = mem_offset + append_hexa_code(s[x], buffer, x + mem_offset);
 
