@@ -12,7 +12,7 @@
  * Return: written chars.
  */
 int _writeunsgnd(int is_neg, int index,
-	char buffer[],int size, int width, int precision, int flags)
+	char buffer[], int size, int width, int precision, int flags)
 {
 	int len = BUFFER_SIZE - index - 1, x = 0;
 	char padd = ' ';
@@ -48,7 +48,7 @@ int _writeunsgnd(int is_neg, int index,
 }
 /**
  * _writepointer - print the  memory address stored to stdout
- * @buffer: Arrays of chars 
+ * @buffer: Arrays of chars
  * @index: Indexing the buffer
  * @len: number leght
  * @width: check for width specifier

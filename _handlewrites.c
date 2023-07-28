@@ -73,19 +73,19 @@ int _writechar(char ch, char buffer[],
  * @flags: Flags
  * @width: width
  * @precision: Precision specifier
- * @length: Number length
+ * @len: Number length
  * @padd: char Padding
  * @extra_ch: Add an extra char
  *
  * Return: Char printed.
  */
-int _writenum(int index, char buffer[],
-	int padd, int width, int precision,
+int _writenum(int index, char buffer[], int padd, int width, int precision,
 	int len, char flags, char extra_ch)
 {
 	int x, start_padd = 1;
 
-	if (precision == 0 && index == BUFFER_SIZE - 2 && buffer[index] == '0' && width == 0)
+	if (precision == 0 && index == BUFFER_SIZE - 2 && buffer[index] == '0'
+	&& width == 0)
 		return (0);
 	if (precision == 0 && index == BUFFER_SIZE - 2 && buffer[index] == '0')
 		buffer[index] = padd = ' ';
